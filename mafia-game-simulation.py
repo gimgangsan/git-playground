@@ -31,6 +31,19 @@ class civilian:
         graveYard.append(self)
         playerList.remove(self)
 
+class mafia(civilian):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def assassinate(self, who):
+        who.whenAssassinated()
+
+class medic(civilian):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def medicare(self, who):
+        who.isHealed = True
 
 randomGuy1 = civilian("bob")
 randomGuy1.whenAssassinated()
